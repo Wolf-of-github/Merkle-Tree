@@ -53,6 +53,7 @@ class BuildMerkleTree:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Generate a Merkle tree from plain English data.")
     parser.add_argument("data", nargs="*", help="List of input text (if empty, random text will be used)")
+    parser.add_argument("--output", default="merkle.tree", help="Output file name for the Merkle tree")
 
     args = parser.parse_args()
     
@@ -64,7 +65,20 @@ if __name__ == '__main__':
     m = BuildMerkleTree()
     tree = m.get_hash(hashes)
 
-    with open("merkle.tree", "w") as f:
-        json.dump(tree, f, indent=4)
+    if args.output == "merkle.trees":
+        try:
+            with open(args.output, "r") as f:
+                existing_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            existing_data = {}
+
+        tree_key = f"tree_{len(existing_data) + 1}"
+        existing_data[tree_key] = tree
+
+        with open(args.output, "w") as f:
+            json.dump(existing_data, f, indent=4)
+    else:
+        with open(args.output, "w") as f:
+            json.dump(tree, f, indent=4)
 
     print("Fully structured Merkle tree with labeled nodes saved to merkle.tree")

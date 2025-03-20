@@ -1,0 +1,270 @@
+{
+    "tree_1": {
+        "hash": "0241d53ad33e6e6ae115fdd957c7d09003471d422f18d2a7e9bffcb23a3d9e9a",
+        "name": "h3",
+        "left": {
+            "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
+            "name": "h1",
+            "left": {
+                "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+                "name": "d1",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "right": {
+                "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+                "name": "d2",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "is_leaf": false
+        },
+        "right": {
+            "hash": "deab4c2ec0d3420cb4064a3043150d5ae7028b71a490f35e34c2a099e1bc2f23",
+            "name": "h2",
+            "left": {
+                "hash": "5d9896af338ff832d279efd9fac6694c77118a8a5c42425dac1827ea41f97e2a",
+                "name": "d3",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "right": {
+                "hash": "07d046d5fac12b3f82daf5035b9aae86db5adc8275ebfbf05ec83005a4a8ba3e",
+                "name": "d4",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "is_leaf": false
+        },
+        "is_leaf": false
+    },
+    "tree_2": {
+        "hash": "bfb9f2a91d8ee3099eab5c52bbfb3fafe95ca64ac0449d3a9b1db23735f02bf5",
+        "name": "h6",
+        "left": {
+            "hash": "0241d53ad33e6e6ae115fdd957c7d09003471d422f18d2a7e9bffcb23a3d9e9a",
+            "name": "h4",
+            "left": {
+                "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
+                "name": "h1",
+                "left": {
+                    "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+                    "name": "d1",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+                    "name": "d2",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "right": {
+                "hash": "deab4c2ec0d3420cb4064a3043150d5ae7028b71a490f35e34c2a099e1bc2f23",
+                "name": "h2",
+                "left": {
+                    "hash": "5d9896af338ff832d279efd9fac6694c77118a8a5c42425dac1827ea41f97e2a",
+                    "name": "d3",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "07d046d5fac12b3f82daf5035b9aae86db5adc8275ebfbf05ec83005a4a8ba3e",
+                    "name": "d4",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "is_leaf": false
+        },
+        "right": {
+            "hash": "4a65b0dd99b55ab3a7dec279853ca78a689da5a4098ec1c16c4e163531052783",
+            "name": "h5",
+            "left": {
+                "hash": "51ef3f857b1e1c0d59b4150ff4aba5137fdbbd32cba7a3fcb6495408bcb79aa7",
+                "name": "h3",
+                "left": {
+                    "hash": "85262adf74518bbb70c7cb94cd6159d91669e5a81edf1efebd543eadbda9fa2b",
+                    "name": "d5",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
+                    "name": "d6",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "right": {
+                "hash": "51ef3f857b1e1c0d59b4150ff4aba5137fdbbd32cba7a3fcb6495408bcb79aa7",
+                "name": "h3",
+                "left": {
+                    "hash": "85262adf74518bbb70c7cb94cd6159d91669e5a81edf1efebd543eadbda9fa2b",
+                    "name": "d5",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
+                    "name": "d6",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "is_leaf": false
+        },
+        "is_leaf": false
+    },
+    "tree_3": {
+        "hash": "0241d53ad33e6e6ae115fdd957c7d09003471d422f18d2a7e9bffcb23a3d9e9a",
+        "name": "h3",
+        "left": {
+            "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
+            "name": "h1",
+            "left": {
+                "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+                "name": "d1",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "right": {
+                "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+                "name": "d2",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "is_leaf": false
+        },
+        "right": {
+            "hash": "deab4c2ec0d3420cb4064a3043150d5ae7028b71a490f35e34c2a099e1bc2f23",
+            "name": "h2",
+            "left": {
+                "hash": "5d9896af338ff832d279efd9fac6694c77118a8a5c42425dac1827ea41f97e2a",
+                "name": "d3",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "right": {
+                "hash": "07d046d5fac12b3f82daf5035b9aae86db5adc8275ebfbf05ec83005a4a8ba3e",
+                "name": "d4",
+                "left": null,
+                "right": null,
+                "is_leaf": true
+            },
+            "is_leaf": false
+        },
+        "is_leaf": false
+    },
+    "tree_4": {
+        "hash": "bfb9f2a91d8ee3099eab5c52bbfb3fafe95ca64ac0449d3a9b1db23735f02bf5",
+        "name": "h6",
+        "left": {
+            "hash": "0241d53ad33e6e6ae115fdd957c7d09003471d422f18d2a7e9bffcb23a3d9e9a",
+            "name": "h4",
+            "left": {
+                "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
+                "name": "h1",
+                "left": {
+                    "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+                    "name": "d1",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+                    "name": "d2",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "right": {
+                "hash": "deab4c2ec0d3420cb4064a3043150d5ae7028b71a490f35e34c2a099e1bc2f23",
+                "name": "h2",
+                "left": {
+                    "hash": "5d9896af338ff832d279efd9fac6694c77118a8a5c42425dac1827ea41f97e2a",
+                    "name": "d3",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "07d046d5fac12b3f82daf5035b9aae86db5adc8275ebfbf05ec83005a4a8ba3e",
+                    "name": "d4",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "is_leaf": false
+        },
+        "right": {
+            "hash": "4a65b0dd99b55ab3a7dec279853ca78a689da5a4098ec1c16c4e163531052783",
+            "name": "h5",
+            "left": {
+                "hash": "51ef3f857b1e1c0d59b4150ff4aba5137fdbbd32cba7a3fcb6495408bcb79aa7",
+                "name": "h3",
+                "left": {
+                    "hash": "85262adf74518bbb70c7cb94cd6159d91669e5a81edf1efebd543eadbda9fa2b",
+                    "name": "d5",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
+                    "name": "d6",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "right": {
+                "hash": "51ef3f857b1e1c0d59b4150ff4aba5137fdbbd32cba7a3fcb6495408bcb79aa7",
+                "name": "h3",
+                "left": {
+                    "hash": "85262adf74518bbb70c7cb94cd6159d91669e5a81edf1efebd543eadbda9fa2b",
+                    "name": "d5",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "right": {
+                    "hash": "d0cfc2e5319b82cdc71a33873e826c93d7ee11363f8ac91c4fa3a2cfcd2286e5",
+                    "name": "d6",
+                    "left": null,
+                    "right": null,
+                    "is_leaf": true
+                },
+                "is_leaf": false
+            },
+            "is_leaf": false
+        },
+        "is_leaf": false
+    }
+}
