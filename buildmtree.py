@@ -77,8 +77,8 @@ if __name__ == '__main__':
 
         with open(args.output, "w") as f:
             json.dump(existing_data, f, indent=4)
+
     else:
         with open(args.output, "w") as f:
             json.dump(tree, f, indent=4)
-
-    print("Fully structured Merkle tree with labeled nodes saved to merkle.tree")
+        print("Fully structured Merkle tree with labeled nodes saved to merkle.tree")
