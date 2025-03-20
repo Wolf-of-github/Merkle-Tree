@@ -30,31 +30,32 @@ def check_consistency(old_data, new_data):
     new_tree = trees.get("tree_2")
 
     target_hash = old_tree['hash']
+    output = []
 
-    def search(node: dict, target_hash: str, output: list) -> bool:
-        
-        if not node:
-            return False
-        
-        left_child = node.get("left")
-        right_child = node.get("right")
-        
-        if left_child and left_child.get("hash") == target_hash:
-            output.extend([left_child["hash"], right_child["hash"]])
+    def search(node):
+        nonlocal output
+        print(f'node name {node['name']}')
+        if not node['left']: return False
+
+        if node['hash'] == target_hash:
             return True
-        
-        if left_child and search(left_child, target_hash, output):
-            output.append(right_child["hash"])
+
+        if node['left']['hash'] == target_hash: 
+            output.append([node['left']['hash'], node['right']['hash']])
             return True
-        
+
+        if search(node['left']):
+            output.append(node['right']['hash'])
+            return True
+
         return False
 
-    output = []
-    if search(new_tree, target_hash, output):
-        output.append(new_tree["hash"])
-        print(f"yes {output}")
+
+    if search(new_tree):
+        output.append(new_tree['hash'])
+        print(f'yes {output}')
     else:
-        print("no", output)
+        print(f'no {output}')
     
     print('Mekle trees for old and new lists saved in merkle.trees')
 
