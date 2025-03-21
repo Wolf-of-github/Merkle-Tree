@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import hashlib
 import json
 import argparse
@@ -19,31 +20,39 @@ class MerkleInclusion:
             sys.exit(1)
 
     def hash_string(self, data):
-        return hashlib.sha256(data.encode()).hexdigest()
+        return hashlib.sha256(data.encode('utf-8')).hexdigest()
 
-    def find_proof(self, node, target_hash, proof=[]):
-        if node is None:
-            return None
+    def find_proof(self, node, target_hash):
+        # If the node is a leaf (i.e., has no children), check if it matches the target hash.
+        if 'left' not in node and 'right' not in node:
+            if node["hash"] == target_hash:
+                return []  # Found the target leaf; no sibling hash needed at this level.
+            else:
+                return None
 
-        if node["hash"] == target_hash:
-            return proof 
+        # Search the left subtree.
+        left_proof = self.find_proof(node["left"], target_hash)
+        if left_proof is not None:
+            # Target found in left subtree; include right sibling's hash if available.
+            if "right" in node and node["right"] is not None:
+                return left_proof + [node["right"]["hash"]]
+            else:
+                return left_proof
 
-        if node["left"]:
-            left_proof = self.find_proof(node["left"], target_hash, proof + [node["right"]["name"]] if node["right"] else proof)
-            if left_proof is not None:
-                return sorted(left_proof, key=lambda x: (x[0] != 'd', x))  # Sort: dX before hX
+        # Search the right subtree.
+        right_proof = self.find_proof(node["right"], target_hash)
+        if right_proof is not None:
+            # Target found in right subtree; include left sibling's hash if available.
+            if "left" in node and node["left"] is not None:
+                return right_proof + [node["left"]["hash"]]
+            else:
+                return right_proof
 
-        if node["right"]:
-            right_proof = self.find_proof(node["right"], target_hash, proof + [node["left"]["name"]] if node["left"] else proof)
-            if right_proof is not None:
-                return sorted(right_proof, key=lambda x: (x[0] != 'd', x))  # Sort: dX before hX
-
-        return None 
+        return None
 
     def check_inclusion(self, data):
         target_hash = self.hash_string(data)
         proof = self.find_proof(self.tree, target_hash)
-
         if proof is not None:
             print(f"yes {proof}")
         else:
