@@ -5,6 +5,8 @@ import hashlib
 import argparse
 import math
 
+h_counter = 1
+
 def hash_data(data):
     return hashlib.sha256(data.encode('utf-8')).hexdigest()
 
@@ -20,11 +22,14 @@ def build_tree(leaves):
             right = leaves[i+1]
             combined = left['hash'] + right['hash']
             parent_hash = hash_data(combined)
+            global h_counter
             parent = {
+                'name': f'h{h_counter}',
                 'hash': parent_hash,
                 'left': left,
                 'right': right
             }
+            h_counter += 1
             parents.append(parent)
             i += 2
         else:
@@ -53,7 +58,7 @@ def compute_consistency_proof(m, leaf_nodes):
     """
     Compute the consistency proof between an old tree of m leaves and a new tree
     built from leaf_nodes (of total n leaves), where m <= n. The proof is computed
-    recursively per RFC6962 Section 2.1.2.
+    recursively
     """
     n = len(leaf_nodes)
     if m == n:
@@ -69,6 +74,7 @@ def compute_consistency_proof(m, leaf_nodes):
         return proof_right + [left_tree['hash']]
 
 def main():
+
     parser = argparse.ArgumentParser(description="Check consistency between two Merkle trees.")
     parser.add_argument("old_data", help="List for the old tree (e.g., \"[alice, bob, carlol, david]\")")
     parser.add_argument("new_data", help="List for the new tree (e.g., \"[alice, bob, carlol, david, eve, fred]\")")
@@ -77,35 +83,29 @@ def main():
     old_list = parse_input(args.old_data)
     new_list = parse_input(args.new_data)
     
-    # Verify that the old list is a prefix of the new list.
-    if len(old_list) > len(new_list) or old_list != new_list[:len(old_list)]:
-        print("no")
-        # Generate trees even if inconsistent.
-        old_leaves = [{'data': item, 'hash': hash_data(item)} for item in old_list]
-        new_leaves = [{'data': item, 'hash': hash_data(item)} for item in new_list]
-        old_tree = build_tree(old_leaves) if old_leaves else {}
-        new_tree = build_tree(new_leaves) if new_leaves else {}
-        trees = {"old_tree": old_tree, "new_tree": new_tree}
-        with open("merkle.trees", "w") as f:
-            json.dump(trees, f, indent=2)
-        sys.exit(0)
-    
     # Build leaf nodes for both trees.
-    old_leaves = [{'data': item, 'hash': hash_data(item)} for item in old_list]
-    new_leaves = [{'data': item, 'hash': hash_data(item)} for item in new_list]
+    old_leaves = [{'data': item, 'hash': hash_data(item), 'name': f'd{index+1}'} for index, item in enumerate(old_list)]
+    new_leaves = [{'data': item, 'hash': hash_data(item), 'name': f'd{index+1}'} for index, item in enumerate(new_list)]
+    
+    # Build the Merkle trees.
     old_tree = build_tree(old_leaves) if old_leaves else {}
     new_tree = build_tree(new_leaves) if new_leaves else {}
-
-    # Compute consistency proof for old tree size m and new tree size n.
-    m = len(old_leaves)
-    proof = compute_consistency_proof(m, new_leaves)
 
     # Write both trees to an output file.
     trees = {"old_tree": old_tree, "new_tree": new_tree}
     with open("merkle.trees", "w") as f:
         json.dump(trees, f, indent=2)
 
-    print(f"yes {proof}")
+    # Check if the old list is a prefix of the new list.
+    if len(old_list) > len(new_list) or old_list != new_list[:len(old_list)]:
+        # Inconsistent data: old tree is not a prefix of the new tree.
+        print("no")
+    else:
+        # Consistent: compute the consistency proof using the new tree.
+        m = len(old_leaves)
+        proof = compute_consistency_proof(m, new_leaves)
+        # proof = [old_tree['hash']] + proof + [new_tree['hash']]
+        print(f"yes {proof}")
 
 if __name__ == '__main__':
     main()

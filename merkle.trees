@@ -1,37 +1,56 @@
 {
   "old_tree": {
-    "hash": "62af5c3cb8da3e4f25061e829ebeea5c7513c54949115b1acc225930a90154da",
+    "name": "h2",
+    "hash": "cdc101ca9d3706344cfac2ce3e0b83a909d4c15d802e76b287311dc651abe192",
     "left": {
-      "data": "a",
-      "hash": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
-    },
-    "right": {
-      "data": "b",
-      "hash": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
-    }
-  },
-  "new_tree": {
-    "hash": "58c89d709329eb37285837b042ab6ff72c7c8f74de0446b091b6a0131c102cfd",
-    "left": {
-      "hash": "62af5c3cb8da3e4f25061e829ebeea5c7513c54949115b1acc225930a90154da",
+      "name": "h1",
+      "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
       "left": {
-        "data": "a",
-        "hash": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+        "data": "alice",
+        "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+        "name": "d1"
       },
       "right": {
-        "data": "b",
-        "hash": "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+        "data": "bob",
+        "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+        "name": "d2"
       }
     },
     "right": {
-      "hash": "d3a0f1c792ccf7f1708d5422696263e35755a86917ea76ef9242bd4a8cf4891a",
+      "data": "carol",
+      "hash": "4c26d9074c27d89ede59270c0ac14b71e071b15239519f75474b2f3ba63481f5",
+      "name": "d3"
+    }
+  },
+  "new_tree": {
+    "name": "h5",
+    "hash": "c73547b1ffacdea74edffa5972a04ebc76ab1798a29e596be3bb48e647c3492d",
+    "left": {
+      "name": "h3",
+      "hash": "92bb1b1e2b4fe6055b9acef6b11b355bf0c58f15aa7b1cde6e3dabec49d95174",
       "left": {
-        "data": "c",
-        "hash": "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6"
+        "data": "alice",
+        "hash": "2bd806c97f0e00af1a1fc3328fa763a9269723c8db8fac4f93af71db186d6e90",
+        "name": "d1"
       },
       "right": {
-        "data": "d",
-        "hash": "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4"
+        "data": "bob",
+        "hash": "81b637d8fcd2c6da6359e6963113a1170de795e4b725b84d1e0b4cfd9ec58ce9",
+        "name": "d2"
+      }
+    },
+    "right": {
+      "name": "h4",
+      "hash": "2ef2284c556c42ce4caaef56fc24dec27044dc6bee27fbb3411722e5e0a1ca64",
+      "left": {
+        "data": "carol",
+        "hash": "4c26d9074c27d89ede59270c0ac14b71e071b15239519f75474b2f3ba63481f5",
+        "name": "d3"
+      },
+      "right": {
+        "data": "david",
+        "hash": "07d046d5fac12b3f82daf5035b9aae86db5adc8275ebfbf05ec83005a4a8ba3e",
+        "name": "d4"
       }
     }
   }

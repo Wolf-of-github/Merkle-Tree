@@ -33,18 +33,18 @@ class MerkleInclusion:
         # Search the left subtree.
         left_proof = self.find_proof(node["left"], target_hash)
         if left_proof is not None:
-            # Target found in left subtree; include right sibling's hash if available.
+            # Target found in left subtree; include right sibling's name if available.
             if "right" in node and node["right"] is not None:
-                return left_proof + [node["right"]["hash"]]
+                return left_proof + [node["right"]["name"]]
             else:
                 return left_proof
 
         # Search the right subtree.
         right_proof = self.find_proof(node["right"], target_hash)
         if right_proof is not None:
-            # Target found in right subtree; include left sibling's hash if available.
+            # Target found in right subtree; include left sibling's name if available.
             if "left" in node and node["left"] is not None:
-                return right_proof + [node["left"]["hash"]]
+                return right_proof + [node["left"]["name"]]
             else:
                 return right_proof
 
