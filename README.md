@@ -1,4 +1,4 @@
-# Merkle Tree Toolkit (Programming Assignment 2)
+# Merkle Tree Toolkit
 
 A small command-line project implementing core Merkle tree operations in Python:
 
